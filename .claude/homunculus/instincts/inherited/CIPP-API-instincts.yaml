@@ -1,0 +1,461 @@
+# Instincts generated from https://github.com/kphillipsjr1101/CIPP-API
+# Generated: 2026-04-13T23:28:42.660Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: CIPP-API-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Commit Length
+
+## Action
+
+Write moderate-length commit messages (~58 characters)
+
+## Evidence
+
+- Average commit message length: 58 chars
+- Based on 15 commits
+
+---
+id: CIPP-API-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: CIPP-API-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: CIPP-API-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: CIPP-API-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: CIPP-API-workflow-bulk-alert-module-refactor
+trigger: "when doing bulk alert module refactor"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Bulk Alert Module Refactor
+
+## Action
+
+Follow the bulk-alert-module-refactor workflow:
+1. Identify all alert scripts in Modules/CIPPCore/Public/Alerts/
+2. Update each script to use the new function or pattern (e.g., Get-CippException)
+3. Commit all updated alert scripts together
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPCore/Public/Alerts/*.ps1
+
+---
+id: CIPP-API-workflow-documentation-instructions-update
+trigger: "when doing documentation instructions update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Documentation Instructions Update
+
+## Action
+
+Follow the documentation-instructions-update workflow:
+1. Edit or add markdown files in .github/instructions/ and .github/agents/
+2. Optionally update .gitignore or related meta files
+3. Commit all documentation changes together
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/instructions/*.md, .github/agents/*.md, .github/copilot-instructions.md
+
+---
+id: CIPP-API-workflow-version-bump-release
+trigger: "when doing version bump release"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Version Bump Release
+
+## Action
+
+Follow the version-bump-release workflow:
+1. Edit host.json and version_latest.txt to reflect new version
+2. Commit both files together
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: host.json, version_latest.txt
+
+---
+id: CIPP-API-workflow-hotfix-or-merge-from-dev
+trigger: "when doing hotfix or merge from dev"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Hotfix Or Merge From Dev
+
+## Action
+
+Follow the hotfix-or-merge-from-dev workflow:
+1. Merge dev branch into hotfix/main
+2. Resolve conflicts and aggregate all changed files
+3. Commit the merged changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPCore/Public/**/*.ps1, .github/instructions/*.md, .github/agents/*.md
+
+---
+id: cipp-api-instinct-file-naming
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct File Naming
+
+## Action
+
+Use kebab-case for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Consistent usage in repository file names
+
+---
+id: cipp-api-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+- Consistent usage in TypeScript files
+
+---
+id: cipp-api-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+- Consistent usage in TypeScript files
+
+---
+id: cipp-api-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+- Consistent usage in TypeScript files
+
+---
+id: cipp-api-instinct-import-style
+trigger: "When importing modules in TypeScript files"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+- Seen in TypeScript source files
+
+---
+id: cipp-api-instinct-export-style
+trigger: "When exporting from a TypeScript module"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+- Seen in TypeScript source files
+
+---
+id: cipp-api-instinct-test-location
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test Location
+
+## Action
+
+Place test files in a separate test directory, not mixed with source files
+
+## Evidence
+
+- Pattern in architecture.testLocation
+- No test files found within src layout
+
+---
+id: cipp-api-instinct-commit-prefix
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Commit Prefix
+
+## Action
+
+Start the commit message with a prefix such as 'fix:' or 'chore:' to indicate the type of change
+
+## Evidence
+
+- Seen in commit 'fix: Enhance New-CIPPCAPolicy...'
+- Seen in commit 'chore: bump version to 10.3.1'
+
+---
+id: cipp-api-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Commit Length
+
+## Action
+
+Keep commit messages concise, around 58 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength
+- Examples of commit messages
+
+---
+id: cipp-api-instinct-bulk-alert-module-refactor
+trigger: "When migrating or updating the implementation details for all alert modules (e.g., to use a new exception handler)"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Bulk Alert Module Refactor
+
+## Action
+
+Identify all alert scripts in Modules/CIPPCore/Public/Alerts/, update each to use the new function or pattern, and commit all updated alert scripts together
+
+## Evidence
+
+- Workflow 'bulk-alert-module-refactor'
+- Commits updating multiple alert scripts to use Get-CippException
+
+---
+id: cipp-api-instinct-documentation-instructions-update
+trigger: "When improving developer/AI agent instructions or updating documentation for new features or conventions"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Documentation Instructions Update
+
+## Action
+
+Edit or add markdown files in .github/instructions/ and .github/agents/, optionally update .gitignore, and commit all documentation changes together
+
+## Evidence
+
+- Workflow 'documentation-instructions-update'
+- Commits editing .github/instructions/*.md and .github/agents/*.md
+
+---
+id: cipp-api-instinct-version-bump-release
+trigger: "When preparing a new release or after merging significant changes"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Version Bump Release
+
+## Action
+
+Edit host.json and version_latest.txt to reflect the new version and commit both files together
+
+## Evidence
+
+- Workflow 'version-bump-release'
+- Commits editing host.json and version_latest.txt together
+
+---
+id: cipp-api-instinct-hotfix-or-merge-from-dev
+trigger: "When synchronizing branches or deploying hotfixes that require multiple updates"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Hotfix Or Merge From Dev
+
+## Action
+
+Merge dev branch into hotfix/main, resolve conflicts, aggregate all changed files, and commit the merged changes
+
+## Evidence
+
+- Workflow 'hotfix-or-merge-from-dev'
+- Commits merging dev into main/hotfix with multiple file changes
+
