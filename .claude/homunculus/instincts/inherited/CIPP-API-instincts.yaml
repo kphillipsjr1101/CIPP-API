@@ -1,0 +1,542 @@
+# Instincts generated from https://github.com/kphillipsjr1101/CIPP-API
+# Generated: 2026-04-24T17:29:28.909Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: CIPP-API-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Commit Length
+
+## Action
+
+Keep commit messages concise (~45 characters)
+
+## Evidence
+
+- Average commit message length: 45 chars
+- Based on 100 commits
+
+---
+id: CIPP-API-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: CIPP-API-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: CIPP-API-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: CIPP-API-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: CIPP-API-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: **/*.test.*, **/api/**
+
+---
+id: CIPP-API-workflow-module-breakout-and-mass-script-addition
+trigger: "when doing module breakout and mass script addition"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Module Breakout And Mass Script Addition
+
+## Action
+
+Follow the module-breakout-and-mass-script-addition workflow:
+1. Update or create multiple module manifest files (*.psd1, *.psm1)
+2. Add or move many scripts under new or existing module directories (e.g., Modules/CIPPCore/Public, Modules/CIPPActivityTriggers/Public/Entrypoints/...)
+3. Update configuration files (e.g., Config/*.json, Config/*.csv)
+4. Update or add build files (e.g., build.psd1)
+5. Update CI/CD workflow files if needed (e.g., .github/workflows/dev_api.yml)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPCore/*.psd1, Modules/CIPPCore/*.psm1, Modules/CIPPCore/Public/**/*.ps1
+
+---
+id: CIPP-API-workflow-standard-script-batch-update
+trigger: "when doing standard script batch update"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Standard Script Batch Update
+
+## Action
+
+Follow the standard-script-batch-update workflow:
+1. Edit many files under Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1
+2. Optionally update or add a helper script for batch updating (e.g., Tools/Update-StandardsComments.ps1)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1, Tools/Update-StandardsComments.ps1
+
+---
+id: CIPP-API-workflow-api-endpoint-addition-or-migration
+trigger: "when doing api endpoint addition or migration"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Api Endpoint Addition Or Migration
+
+## Action
+
+Follow the api-endpoint-addition-or-migration workflow:
+1. Create or update script(s) under Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/[...]/Invoke-*.ps1
+2. Optionally update related index or handler scripts
+3. Add or update test scripts if applicable
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/*.ps1
+
+---
+id: CIPP-API-workflow-config-or-permissions-batch-update
+trigger: "when doing config or permissions batch update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Config Or Permissions Batch Update
+
+## Action
+
+Follow the config-or-permissions-batch-update workflow:
+1. Edit multiple files in Config/ (e.g., *.json, *.csv)
+2. Optionally update related module scripts to consume new config
+3. Commit alongside module or endpoint changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Config/*.json, Config/*.csv
+
+---
+id: CIPP-API-workflow-dll-or-binary-dependency-upgrade
+trigger: "when doing dll or binary dependency upgrade"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Dll Or Binary Dependency Upgrade
+
+## Action
+
+Follow the dll-or-binary-dependency-upgrade workflow:
+1. Add, update, or delete DLL files in module lib directories (e.g., Modules/CIPPCore/lib/*.dll)
+2. Optionally update references in scripts or module manifests
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPCore/lib/*.dll, Modules/AzBobbyTables/**/*.dll
+
+---
+id: cipp-api-instinct-file-naming
+trigger: "When creating or renaming files in the repository"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct File Naming
+
+## Action
+
+Use kebab-case for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Consistent naming in Modules/ and Config/
+
+---
+id: cipp-api-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: cipp-api-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: cipp-api-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: cipp-api-instinct-import-style
+trigger: "When importing modules or files"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: cipp-api-instinct-export-style
+trigger: "When exporting functions or classes"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: cipp-api-instinct-test-file-pattern
+trigger: "When creating a test file"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test File Pattern
+
+## Action
+
+Name test files with the pattern *.test.ts
+
+## Evidence
+
+- Pattern in testing.filePattern
+
+---
+id: cipp-api-instinct-test-type
+trigger: "When writing tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test Type
+
+## Action
+
+Write unit tests as the primary test type
+
+## Evidence
+
+- Pattern in testing.testTypes
+
+---
+id: cipp-api-instinct-commit-prefix
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Commit Prefix
+
+## Action
+
+Prefix commit messages with 'feat' for features and 'fix' for bug fixes
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Seen in commit examples: 'feat: ...', 'fix: ...'
+
+---
+id: cipp-api-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Commit Length
+
+## Action
+
+Keep commit messages concise, averaging around 45 characters
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: cipp-api-instinct-module-breakout
+trigger: "When refactoring core modules for performance, maintainability, or feature expansion"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Module Breakout
+
+## Action
+
+Update/create module manifests, add/move scripts, update configs, and CI/CD files as needed
+
+## Evidence
+
+- Workflow: module-breakout-and-mass-script-addition
+- Pattern in files: Modules/CIPPCore/*.psd1, Modules/CIPPCore/Public/**/*.ps1, Config/*.json
+
+---
+id: cipp-api-instinct-standards-batch-update
+trigger: "When updating documentation, comments, or required metadata for all standards scripts"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Standards Batch Update
+
+## Action
+
+Edit many files under Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1 and optionally update helper scripts
+
+## Evidence
+
+- Workflow: standard-script-batch-update
+- Pattern in files: Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1
+
+---
+id: cipp-api-instinct-api-endpoint-addition
+trigger: "When adding a new HTTP API endpoint or consolidating endpoints under a generic handler"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Api Endpoint Addition
+
+## Action
+
+Create/update scripts under Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/[...]/Invoke-*.ps1 and update related scripts/tests
+
+## Evidence
+
+- Workflow: api-endpoint-addition-or-migration
+- Pattern in files: Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/*.ps1
+
+---
+id: cipp-api-instinct-config-batch-update
+trigger: "When permissions, feature flags, or config tables need to be updated for new features or refactors"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Config Batch Update
+
+## Action
+
+Edit multiple files in Config/ (*.json, *.csv) and optionally update related modules
+
+## Evidence
+
+- Workflow: config-or-permissions-batch-update
+- Pattern in files: Config/*.json, Config/*.csv
+
+---
+id: cipp-api-instinct-dll-upgrade
+trigger: "When upgrading a binary dependency or moving it to a shared location"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Dll Upgrade
+
+## Action
+
+Add, update, or delete DLL files in module lib directories and update references if needed
+
+## Evidence
+
+- Workflow: dll-or-binary-dependency-upgrade
+- Pattern in files: Modules/CIPPCore/lib/*.dll, Modules/AzBobbyTables/**/*.dll
+
