@@ -1,0 +1,583 @@
+# Instincts generated from https://github.com/kphillipsjr1101/CIPP-API
+# Generated: 2026-04-28T23:28:54.991Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: CIPP-API-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Commit Length
+
+## Action
+
+Keep commit messages concise (~41 characters)
+
+## Evidence
+
+- Average commit message length: 41 chars
+- Based on 43 commits
+
+---
+id: CIPP-API-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: CIPP-API-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: CIPP-API-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: CIPP-API-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: **/*.test.*
+
+---
+id: CIPP-API-workflow-add-or-update-http-endpoint
+trigger: "when doing add or update http endpoint"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Http Endpoint
+
+## Action
+
+Follow the add-or-update-http-endpoint workflow:
+1. Create or update a script in Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/...
+2. Optionally update related modules or core logic if needed.
+3. Commit the new or changed endpoint file.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-standard
+trigger: "when doing add or update standard"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Standard
+
+## Action
+
+Follow the add-or-update-standard workflow:
+1. Create or update a script in Modules/CIPPStandards/Public/Standards/...
+2. Optionally update related core logic or helper modules.
+3. Commit the new or changed standard file.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1
+
+---
+id: CIPP-API-workflow-fix-or-enhance-core-logic
+trigger: "when doing fix or enhance core logic"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Fix Or Enhance Core Logic
+
+## Action
+
+Follow the fix-or-enhance-core-logic workflow:
+1. Update one or more scripts in Modules/CIPPCore/Public/...
+2. Commit the changes with a fix or refactor message.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: Modules/CIPPCore/Public/**/*.ps1
+
+---
+id: CIPP-API-workflow-update-or-fix-documentation-links
+trigger: "when doing update or fix documentation links"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Update Or Fix Documentation Links
+
+## Action
+
+Follow the update-or-fix-documentation-links workflow:
+1. Search for and update documentation links in code files.
+2. Commit the changes with a message referencing documentation updates.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPCore/Public/**/*.ps1, Modules/CIPPStandards/Public/Standards/**/*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-gdap-tenant-functions
+trigger: "when doing add or update gdap tenant functions"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Gdap Tenant Functions
+
+## Action
+
+Follow the add-or-update-gdap-tenant-functions workflow:
+1. Create or update scripts in Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/Tenant/GDAP/...
+2. Commit the changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/Tenant/GDAP/Invoke-ListGDAP*.ps1
+
+---
+id: CIPP-API-workflow-move-or-rename-config-and-root-files
+trigger: "when doing move or rename config and root files"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Move Or Rename Config And Root Files
+
+## Action
+
+Follow the move-or-rename-config-and-root-files workflow:
+1. Move or rename files in Config/ or at the repo root.
+2. Update references in scripts or workflows as needed.
+3. Commit the changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Config/*.json, Config/*.txt, version_latest.txt
+
+---
+id: cipp-api-instinct-file-naming
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct File Naming
+
+## Action
+
+Use kebab-case for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Consistent in Modules/ and Config/
+
+---
+id: cipp-api-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+- Examples in Modules/CIPPCore/Public/
+
+---
+id: cipp-api-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: cipp-api-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: cipp-api-instinct-import-style
+trigger: "When importing modules or files"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: cipp-api-instinct-export-style
+trigger: "When exporting functions or classes"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: cipp-api-instinct-test-location
+trigger: "When adding a new test"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test Location
+
+## Action
+
+Place test files in either the same folder as the code or in dedicated test folders (mixed location)
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+- Examples in Modules/CIPPTests/Public/Tests/
+
+---
+id: cipp-api-instinct-test-naming
+trigger: "When naming a test script"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test Naming
+
+## Action
+
+Prefix test scripts with 'Invoke-CippTest' and include feature or identity in the name
+
+## Evidence
+
+- Examples: Invoke-CippTestCopilotReady001.ps1
+- Pattern in Modules/CIPPTests/Public/Tests/
+
+---
+id: cipp-api-instinct-test-for-feature
+trigger: "When implementing a new feature"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test For Feature
+
+## Action
+
+Add corresponding test scripts for the feature
+
+## Evidence
+
+- Workflow: feature-development
+- Example: Add tests for feature after implementation
+
+---
+id: cipp-api-instinct-commit-prefix
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Commit Prefix
+
+## Action
+
+Prefix the message with 'fix:', 'feat:', 'chore:', or 'refactor:' as appropriate
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples: 'fix: copilot license matching test', 'feat: Add Invoke-ExecTestRefresh HTTP entrypoint'
+
+---
+id: cipp-api-instinct-commit-length
+trigger: "When composing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, around 40 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: cipp-api-instinct-add-or-update-http-endpoint
+trigger: "When exposing new functionality or fixing a bug via an HTTP endpoint"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Add Or Update Http Endpoint
+
+## Action
+
+Create or update a script in Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/ and commit the change
+
+## Evidence
+
+- Workflow: add-or-update-http-endpoint
+- Example: feat: Add Invoke-ExecTestRefresh HTTP entrypoint
+
+---
+id: cipp-api-instinct-add-or-update-standard
+trigger: "When enforcing a new standard or updating compliance logic"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Add Or Update Standard
+
+## Action
+
+Create or update a script in Modules/CIPPStandards/Public/Standards/ and commit the change
+
+## Evidence
+
+- Workflow: add-or-update-standard
+- Pattern in Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1
+
+---
+id: cipp-api-instinct-fix-or-enhance-core-logic
+trigger: "When fixing a bug or enhancing a core function"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Fix Or Enhance Core Logic
+
+## Action
+
+Update scripts in Modules/CIPPCore/Public/ and commit with a fix or refactor message
+
+## Evidence
+
+- Workflow: fix-or-enhance-core-logic
+- Examples: fix: base role permissions
+
+---
+id: cipp-api-instinct-update-or-fix-documentation-links
+trigger: "When finding broken or outdated documentation links"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Update Or Fix Documentation Links
+
+## Action
+
+Update documentation links in code files and commit with a message referencing documentation updates
+
+## Evidence
+
+- Workflow: update-or-fix-documentation-links
+
+---
+id: cipp-api-instinct-add-or-update-gdap-tenant-functions
+trigger: "When supporting new GDAP operations or fixing GDAP-related bugs"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Add Or Update Gdap Tenant Functions
+
+## Action
+
+Create or update scripts in Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/Tenant/GDAP/ and commit the change
+
+## Evidence
+
+- Workflow: add-or-update-gdap-tenant-functions
+
+---
+id: cipp-api-instinct-move-or-rename-config-and-root-files
+trigger: "When cleaning up the root directory or reorganizing configuration files"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Move Or Rename Config And Root Files
+
+## Action
+
+Move or rename files in Config/ or at the repo root, update references, and commit the changes
+
+## Evidence
+
+- Workflow: move-or-rename-config-and-root-files
+
