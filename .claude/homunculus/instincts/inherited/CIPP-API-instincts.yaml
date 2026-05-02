@@ -1,0 +1,669 @@
+# Instincts generated from https://github.com/kphillipsjr1101/CIPP-API
+# Generated: 2026-05-02T05:29:03.130Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: CIPP-API-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Commit Length
+
+## Action
+
+Keep commit messages concise (~46 characters)
+
+## Evidence
+
+- Average commit message length: 46 chars
+- Based on 73 commits
+
+---
+id: CIPP-API-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: CIPP-API-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: CIPP-API-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: CIPP-API-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: CIPP-API-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: CIPP-API-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: 
+
+---
+id: CIPP-API-workflow-add-or-update-standard
+trigger: "when doing add or update standard"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Standard
+
+## Action
+
+Follow the add-or-update-standard workflow:
+1. Create or modify a script in Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1
+2. Optionally update related documentation or instructions in .github/instructions/standards.instructions.md
+3. Commit the new or updated standard script
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-alert
+trigger: "when doing add or update alert"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Alert
+
+## Action
+
+Follow the add-or-update-alert workflow:
+1. Create or modify a script in Modules/CIPPCore/Public/Alerts/Get-CIPPAlert*.ps1 or Modules/CIPPAlerts/Public/Alerts/Get-CIPPAlert*.ps1
+2. Optionally update agent documentation in .github/agents/CIPP-Alert-Agent.md
+3. Commit the new or updated alert script
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: Modules/CIPPCore/Public/Alerts/Get-CIPPAlert*.ps1, Modules/CIPPAlerts/Public/Alerts/Get-CIPPAlert*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-activity-trigger
+trigger: "when doing add or update activity trigger"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Activity Trigger
+
+## Action
+
+Follow the add-or-update-activity-trigger workflow:
+1. Create or modify a script in Modules/CIPPCore/Public/Entrypoints/Activity Triggers/*/Push-*.ps1 or Modules/CIPPActivityTriggers/Public/Entrypoints/Activity Triggers/*/Push-*.ps1
+2. Commit the new or updated trigger script
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: Modules/CIPPCore/Public/Entrypoints/Activity Triggers/*/Push-*.ps1, Modules/CIPPActivityTriggers/Public/Entrypoints/Activity Triggers/*/Push-*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-http-endpoint
+trigger: "when doing add or update http endpoint"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Http Endpoint
+
+## Action
+
+Follow the add-or-update-http-endpoint workflow:
+1. Create or modify a script in Modules/CIPPCore/Public/Entrypoints/HTTP Functions/**/*.ps1 or Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/*.ps1
+2. Optionally update related documentation or tests
+3. Commit the new or updated endpoint script
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: Modules/CIPPCore/Public/Entrypoints/HTTP Functions/**/*.ps1, Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-dbcache-writer
+trigger: "when doing add or update dbcache writer"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Dbcache Writer
+
+## Action
+
+Follow the add-or-update-dbcache-writer workflow:
+1. Create or modify a script in Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1
+2. Optionally update related HTTP endpoint in Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/Invoke-List*.ps1
+3. Commit the new or updated DB cache writer
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-test-script
+trigger: "when doing add or update test script"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Test Script
+
+## Action
+
+Follow the add-or-update-test-script workflow:
+1. Create or modify a script in Modules/CIPPCore/Public/Tests/**/*.ps1 or Modules/CIPPTests/Public/Tests/**/*.ps1
+2. Optionally add or update corresponding .md documentation
+3. Commit the new or updated test script
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPCore/Public/Tests/**/*.ps1, Modules/CIPPTests/Public/Tests/**/*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-graph-helper-or-request
+trigger: "when doing add or update graph helper or request"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Graph Helper Or Request
+
+## Action
+
+Follow the add-or-update-graph-helper-or-request workflow:
+1. Create or modify a script in Modules/CIPPCore/Public/GraphHelper/*.ps1 or Modules/CIPPCore/Public/GraphRequests/*.ps1
+2. Commit the new or updated helper/request
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPCore/Public/GraphHelper/*.ps1, Modules/CIPPCore/Public/GraphRequests/*.ps1
+
+---
+id: cipp-api-instinct-file-naming
+trigger: "When creating a new file in the repository"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct File Naming
+
+## Action
+
+Name the file using kebab-case
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Consistent with existing files
+
+---
+id: cipp-api-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: cipp-api-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: cipp-api-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: cipp-api-instinct-import-style
+trigger: "When importing modules or files"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: cipp-api-instinct-export-style
+trigger: "When exporting functions or classes"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: cipp-api-instinct-test-location
+trigger: "When adding new test scripts"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test Location
+
+## Action
+
+Place test scripts in dedicated test folders (Modules/CIPPCore/Public/Tests or Modules/CIPPTests/Public/Tests)
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+- Pattern in workflows.add-or-update-test-script.filesInvolved
+
+---
+id: cipp-api-instinct-test-pattern
+trigger: "When naming a test file"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test Pattern
+
+## Action
+
+Use the pattern *.test.ts for test scripts
+
+## Evidence
+
+- Pattern in testing.filePattern
+
+---
+id: cipp-api-instinct-test-type
+trigger: "When writing tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test Type
+
+## Action
+
+Focus on unit tests
+
+## Evidence
+
+- Pattern in testing.testTypes
+
+---
+id: cipp-api-instinct-commit-prefix
+trigger: "When making a commit"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Commit Prefix
+
+## Action
+
+Prefix the commit message with 'feat' for new features or 'fix' for bug fixes
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Seen in commit 'feat(mde-onboarding): cache full connector properties'
+- Seen in commit 'fix: handle case when no tenants found for MDE report'
+
+---
+id: cipp-api-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, around 46 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: cipp-api-instinct-add-or-update-standard
+trigger: "When someone wants to add a new compliance standard or update an existing standard for tenant management"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Add Or Update Standard
+
+## Action
+
+Create or modify a script in Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1 and optionally update .github/instructions/standards.instructions.md
+
+## Evidence
+
+- Workflow 'add-or-update-standard'
+- Pattern in workflows.add-or-update-standard.filesInvolved
+
+---
+id: cipp-api-instinct-add-or-update-alert
+trigger: "When someone wants to introduce a new alert type or enhance alert logic for tenant health/security"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Add Or Update Alert
+
+## Action
+
+Create or modify a script in Modules/CIPPCore/Public/Alerts/Get-CIPPAlert*.ps1 or Modules/CIPPAlerts/Public/Alerts/Get-CIPPAlert*.ps1 and optionally update .github/agents/CIPP-Alert-Agent.md
+
+## Evidence
+
+- Workflow 'add-or-update-alert'
+- Pattern in workflows.add-or-update-alert.filesInvolved
+
+---
+id: cipp-api-instinct-add-or-update-activity-trigger
+trigger: "When someone wants to automate a new activity or update an existing automation trigger"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Add Or Update Activity Trigger
+
+## Action
+
+Create or modify a script in Modules/CIPPCore/Public/Entrypoints/Activity Triggers/*/Push-*.ps1 or Modules/CIPPActivityTriggers/Public/Entrypoints/Activity Triggers/*/Push-*.ps1
+
+## Evidence
+
+- Workflow 'add-or-update-activity-trigger'
+- Pattern in workflows.add-or-update-activity-trigger.filesInvolved
+
+---
+id: cipp-api-instinct-add-or-update-http-endpoint
+trigger: "When someone wants to expose a new API endpoint or update an existing one for CIPP"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Add Or Update Http Endpoint
+
+## Action
+
+Create or modify a script in Modules/CIPPCore/Public/Entrypoints/HTTP Functions/**/*.ps1 or Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/*.ps1 and optionally update documentation or tests
+
+## Evidence
+
+- Workflow 'add-or-update-http-endpoint'
+- Pattern in workflows.add-or-update-http-endpoint.filesInvolved
+
+---
+id: cipp-api-instinct-add-or-update-dbcache-writer
+trigger: "When someone wants to cache new data from Graph or update the caching logic for reporting"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Add Or Update Dbcache Writer
+
+## Action
+
+Create or modify a script in Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1 and optionally update related HTTP endpoint
+
+## Evidence
+
+- Workflow 'add-or-update-dbcache-writer'
+- Pattern in workflows.add-or-update-dbcache-writer.filesInvolved
+
+---
+id: cipp-api-instinct-add-or-update-test-script
+trigger: "When someone wants to add a new test or improve test coverage for standards or features"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Add Or Update Test Script
+
+## Action
+
+Create or modify a script in Modules/CIPPCore/Public/Tests/**/*.ps1 or Modules/CIPPTests/Public/Tests/**/*.ps1 and optionally update documentation
+
+## Evidence
+
+- Workflow 'add-or-update-test-script'
+- Pattern in workflows.add-or-update-test-script.filesInvolved
+
+---
+id: cipp-api-instinct-add-or-update-graph-helper-or-request
+trigger: "When someone needs to support new Graph API calls or change request logic"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Add Or Update Graph Helper Or Request
+
+## Action
+
+Create or modify a script in Modules/CIPPCore/Public/GraphHelper/*.ps1 or Modules/CIPPCore/Public/GraphRequests/*.ps1
+
+## Evidence
+
+- Workflow 'add-or-update-graph-helper-or-request'
+- Pattern in workflows.add-or-update-graph-helper-or-request.filesInvolved
+
