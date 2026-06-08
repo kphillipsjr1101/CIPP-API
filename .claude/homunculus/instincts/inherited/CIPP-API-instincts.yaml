@@ -1,0 +1,721 @@
+# Instincts generated from https://github.com/kphillipsjr1101/CIPP-API
+# Generated: 2026-06-08T17:30:11.324Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: CIPP-API-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Commit Length
+
+## Action
+
+Keep commit messages concise (~45 characters)
+
+## Evidence
+
+- Average commit message length: 45 chars
+- Based on 100 commits
+
+---
+id: CIPP-API-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: CIPP-API-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: CIPP-API-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: CIPP-API-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: CIPP-API-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: CIPP-API-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: **/*.test.*, **/api/**
+
+---
+id: CIPP-API-workflow-test-driven-development
+trigger: "when adding new functionality"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Test Driven Development
+
+## Action
+
+Follow the test-driven-development workflow:
+1. Write failing test
+2. Implement code to pass test
+3. Refactor if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: **/*.test.*, **/*.spec.*, src/**/*
+
+---
+id: CIPP-API-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/**/*
+
+---
+id: CIPP-API-workflow-add-or-update-standard
+trigger: "when doing add or update standard"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Standard
+
+## Action
+
+Follow the add-or-update-standard workflow:
+1. Create or update a file in Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1
+2. If new, add entry to Config/standards.json
+3. If new, add to documentation (e.g., .github/instructions/standards.instructions.md)
+4. Optionally update related cache or reporting functions in Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1
+5. Optionally add or update tests in Modules/CIPPTests/Public/Tests/
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1, Config/standards.json, .github/instructions/standards.instructions.md
+
+---
+id: CIPP-API-workflow-add-or-update-api-endpoint
+trigger: "when doing add or update api endpoint"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Api Endpoint
+
+## Action
+
+Follow the add-or-update-api-endpoint workflow:
+1. Create or update a function in Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/Invoke-*.ps1
+2. If new, add to relevant index/module file
+3. Optionally update related cache/DB functions in Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1
+4. Optionally update related reporting/logic in Modules/CIPPCore/Public/Get-*.ps1
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/Invoke-*.ps1, Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1, Modules/CIPPCore/Public/Get-*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-cache-writer
+trigger: "when doing add or update cache writer"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Cache Writer
+
+## Action
+
+Follow the add-or-update-cache-writer workflow:
+1. Create or update a function in Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1
+2. Optionally update the corresponding HTTP endpoint to call the cache writer
+3. Optionally update reporting functions in Modules/CIPPCore/Public/Get-*.ps1
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1, Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/Invoke-*.ps1, Modules/CIPPCore/Public/Get-*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-reporting-function
+trigger: "when doing add or update reporting function"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Reporting Function
+
+## Action
+
+Follow the add-or-update-reporting-function workflow:
+1. Create or update a function in Modules/CIPPCore/Public/Get-*.ps1
+2. Optionally update or add corresponding HTTP endpoint in Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/Invoke-*.ps1
+3. Optionally update or add cache writer in Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: Modules/CIPPCore/Public/Get-*.ps1, Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/Invoke-*.ps1, Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-custom-script-or-test
+trigger: "when doing add or update custom script or test"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Custom Script Or Test
+
+## Action
+
+Follow the add-or-update-custom-script-or-test workflow:
+1. Create or update a script in Modules/CIPPTests/Public/Tests/Custom/Invoke-CippTestCustomScripts.ps1 or similar location
+2. Update or add HTTP endpoint in Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/Tools/Custom-Scripts/Invoke-*.ps1
+3. Optionally update scheduler or reporting logic
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPTests/Public/Tests/Custom/Invoke-CippTestCustomScripts.ps1, Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/Tools/Custom-Scripts/Invoke-*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-license-or-capability-check
+trigger: "when doing add or update license or capability check"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update License Or Capability Check
+
+## Action
+
+Follow the add-or-update-license-or-capability-check workflow:
+1. Update or add Test-CIPPStandardLicense or similar logic in Modules/CIPPCore/Public/Functions/Test-CIPPStandardLicense.ps1
+2. Update affected standard(s) in Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1 to use the new/updated check
+3. Optionally update documentation or comment blocks
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPCore/Public/Functions/Test-CIPPStandardLicense.ps1, Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1
+
+---
+id: CIPP-API-workflow-add-or-update-fuzzy-matching-or-advanced-matching-helper
+trigger: "when doing add or update fuzzy matching or advanced matching helper"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Add Or Update Fuzzy Matching Or Advanced Matching Helper
+
+## Action
+
+Follow the add-or-update-fuzzy-matching-or-advanced-matching-helper workflow:
+1. Add or update helper in Modules/CIPPCore/Public/Tools/Find-CIPPFuzzyPolicyMatch.ps1 or similar
+2. Add or update test in Tests/Private/Find-CIPPFuzzyPolicyMatch.Tests.ps1
+3. Integrate helper into relevant standard or policy deployment logic (e.g., Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandardIntuneTemplate.ps1, Modules/CIPPCore/Public/Set-CIPPIntunePolicy.ps1)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPCore/Public/Tools/Find-CIPPFuzzyPolicyMatch.ps1, Modules/CIPPCore/Public/Tools/Get-CIPPLevenshteinDistance.ps1, Tests/Private/Find-CIPPFuzzyPolicyMatch.Tests.ps1
+
+---
+id: cipp-api-file-naming-kebab-case
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api File Naming Kebab Case
+
+## Action
+
+Use kebab-case for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+
+---
+id: cipp-api-function-naming-camelCase
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Function Naming CamelCase
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: cipp-api-class-naming-pascalCase
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Class Naming PascalCase
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: cipp-api-constant-naming-screaming-snake-case
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Constant Naming Screaming Snake Case
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: cipp-api-import-style-relative
+trigger: "When importing modules"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Import Style Relative
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: cipp-api-export-style-named
+trigger: "When exporting functions or classes"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Export Style Named
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: cipp-api-test-file-pattern
+trigger: "When creating a test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Test File Pattern
+
+## Action
+
+Name the file with the pattern *.test.ts
+
+## Evidence
+
+- Pattern in testing.filePattern
+
+---
+id: cipp-api-unit-test-type
+trigger: "When writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Unit Test Type
+
+## Action
+
+Write unit tests as the primary test type
+
+## Evidence
+
+- Pattern in testing.testTypes
+
+---
+id: cipp-api-tdd-workflow
+trigger: "When following test-driven development"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Tdd Workflow
+
+## Action
+
+Write a failing test, implement code to pass the test, then refactor if needed
+
+## Evidence
+
+- Workflow: test-driven-development
+- Commits: test: add tests for user validation, feat: implement user validation
+
+---
+id: cipp-api-commit-prefix
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Commit Prefix
+
+## Action
+
+Prefix the commit message with feat, fix, test, or chore as appropriate
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples: feat: Add Levenshtein distance function and tests
+
+---
+id: cipp-api-commit-length
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Commit Length
+
+## Action
+
+Keep the commit message concise (average ~45 characters)
+
+## Evidence
+
+- Pattern in commits.averageLength
+- Examples: fix: intune standard change detection queries
+
+---
+id: cipp-api-add-or-update-standard
+trigger: "When a new Microsoft 365 standard needs to be enforced or an existing standard needs to be updated"
+confidence: 0.98
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Add Or Update Standard
+
+## Action
+
+Create or update a file in Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1; if new, add to Config/standards.json and documentation; optionally update related cache and tests
+
+## Evidence
+
+- Workflow: add-or-update-standard
+- Files: Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1, Config/standards.json
+
+---
+id: cipp-api-add-or-update-api-endpoint
+trigger: "When a new frontend page/feature needs a backend endpoint or an existing endpoint is enhanced"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Add Or Update Api Endpoint
+
+## Action
+
+Create or update a function in Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/Invoke-*.ps1; if new, add to relevant index/module file; optionally update related cache and reporting logic
+
+## Evidence
+
+- Workflow: add-or-update-api-endpoint
+- Files: Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/**/Invoke-*.ps1
+
+---
+id: cipp-api-add-or-update-cache-writer
+trigger: "When a new data type needs to be cached for reporting or standards, or an existing cache logic needs improvement"
+confidence: 0.93
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Add Or Update Cache Writer
+
+## Action
+
+Create or update a function in Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1; optionally update corresponding HTTP endpoint and reporting functions
+
+## Evidence
+
+- Workflow: add-or-update-cache-writer
+- Files: Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1
+
+---
+id: cipp-api-add-or-update-reporting-function
+trigger: "When a new report is needed or an existing report needs enhancement"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Add Or Update Reporting Function
+
+## Action
+
+Create or update a function in Modules/CIPPCore/Public/Get-*.ps1; optionally update or add corresponding HTTP endpoint and cache writer
+
+## Evidence
+
+- Workflow: add-or-update-reporting-function
+- Files: Modules/CIPPCore/Public/Get-*.ps1
+
+---
+id: cipp-api-add-or-update-custom-script-or-test
+trigger: "When a new custom health check, compliance test, or alert logic is needed"
+confidence: 0.87
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Add Or Update Custom Script Or Test
+
+## Action
+
+Create or update a script in Modules/CIPPTests/Public/Tests/Custom/Invoke-CippTestCustomScripts.ps1 or similar; update or add HTTP endpoint; optionally update scheduler or reporting logic
+
+## Evidence
+
+- Workflow: add-or-update-custom-script-or-test
+- Files: Modules/CIPPTests/Public/Tests/Custom/Invoke-CippTestCustomScripts.ps1
+
+---
+id: cipp-api-add-or-update-license-or-capability-check
+trigger: "When a standard or feature requires a new license check or an existing check needs to be updated for accuracy"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Add Or Update License Or Capability Check
+
+## Action
+
+Update or add Test-CIPPStandardLicense or similar logic in Modules/CIPPCore/Public/Functions/Test-CIPPStandardLicense.ps1; update affected standard(s) to use the new/updated check; optionally update documentation
+
+## Evidence
+
+- Workflow: add-or-update-license-or-capability-check
+- Files: Modules/CIPPCore/Public/Functions/Test-CIPPStandardLicense.ps1
+
+---
+id: cipp-api-add-or-update-fuzzy-matching-helper
+trigger: "When more robust or flexible matching is needed for policy/template deployment"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Add Or Update Fuzzy Matching Helper
+
+## Action
+
+Add or update helper in Modules/CIPPCore/Public/Tools/Find-CIPPFuzzyPolicyMatch.ps1 or similar; add or update test; integrate helper into relevant standard or policy deployment logic
+
+## Evidence
+
+- Workflow: add-or-update-fuzzy-matching-or-advanced-matching-helper
+- Files: Modules/CIPPCore/Public/Tools/Find-CIPPFuzzyPolicyMatch.ps1
+
