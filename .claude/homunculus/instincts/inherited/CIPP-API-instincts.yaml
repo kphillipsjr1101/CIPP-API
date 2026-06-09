@@ -1,0 +1,412 @@
+# Instincts generated from https://github.com/kphillipsjr1101/CIPP-API
+# Generated: 2026-06-09T17:28:42.164Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: CIPP-API-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Commit Length
+
+## Action
+
+Keep commit messages concise (~43 characters)
+
+## Evidence
+
+- Average commit message length: 43 chars
+- Based on 15 commits
+
+---
+id: CIPP-API-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: CIPP-API-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: CIPP-API-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: CIPP-API-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: CIPP-API-workflow-fix-or-enhance-existing-function
+trigger: "when doing fix or enhance existing function"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Fix Or Enhance Existing Function
+
+## Action
+
+Follow the fix-or-enhance-existing-function workflow:
+1. Identify the function needing a fix or enhancement.
+2. Edit the corresponding .ps1 file to update logic, variable casing, or permissions.
+3. Commit the changes with a descriptive message.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandardSPOVersionControl.ps1, Modules/CIPPHTTP/Public/Entrypoints/HTTP Functions/Email-Exchange/Tools/Invoke-ListMessageTrace.ps1
+
+---
+id: CIPP-API-workflow-feature-or-bugfix-touching-multiple-related-files
+trigger: "when doing feature or bugfix touching multiple related files"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Feature Or Bugfix Touching Multiple Related Files
+
+## Action
+
+Follow the feature-or-bugfix-touching-multiple-related-files workflow:
+1. Edit or create several related .ps1 files within a module or feature area.
+2. Update configuration files if needed (e.g., Config/CIPPTimers.json, Config/version_latest.txt).
+3. Commit all related changes together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPCore/Public/Authentication/Add-CIPPSSOAppSecret.ps1, Modules/CIPPCore/Public/Authentication/New-CIPPSSOApp.ps1, Modules/CIPPCore/Public/Authentication/Set-CIPPSSOStoredCredentials.ps1
+
+---
+id: CIPP-API-workflow-version-and-config-bump
+trigger: "when doing version and config bump"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Version And Config Bump
+
+## Action
+
+Follow the version-and-config-bump workflow:
+1. Update version numbers in version_latest.txt and/or host.json.
+2. Update configuration files as needed (e.g., Config/CIPPTimers.json).
+3. Commit all version/config changes together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Config/version_latest.txt, host.json, version_latest.txt
+
+---
+id: cipp-api-instinct-file-naming
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct File Naming
+
+## Action
+
+Use kebab-case for file names (e.g., my-file-name.ts)
+
+## Evidence
+
+- Pattern in namingConventions.files
+- Consistent in Modules/Config folders
+
+---
+id: cipp-api-instinct-function-naming
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in namingConventions.functions
+- Seen in .ps1 PowerShell functions
+
+---
+id: cipp-api-instinct-class-naming
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: cipp-api-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: cipp-api-instinct-import-style
+trigger: "When importing modules in TypeScript"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: cipp-api-instinct-export-style
+trigger: "When exporting from a TypeScript module"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: cipp-api-instinct-test-location
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test Location
+
+## Action
+
+Place test files in a separate test location, not mixed with source files
+
+## Evidence
+
+- architecture.folderStructure.testLocation: separate
+
+---
+id: cipp-api-instinct-commit-prefix
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Commit Prefix
+
+## Action
+
+Prefix the message with 'fix:' for bug fixes or 'chore:' for routine maintenance
+
+## Evidence
+
+- Seen in commit: fix: update role and fix variable casing in message trace function
+- Seen in commit: chore: bump version to 10.5.1
+
+---
+id: cipp-api-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Commit Length
+
+## Action
+
+Keep commit messages concise, around 40-50 characters
+
+## Evidence
+
+- commits.averageLength: 43
+
+---
+id: cipp-api-instinct-fix-function-workflow
+trigger: "When a bug or enhancement is needed in an existing function"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Fix Function Workflow
+
+## Action
+
+Edit the specific .ps1 file, update logic/variables/permissions, and commit with a descriptive message
+
+## Evidence
+
+- Workflow: fix-or-enhance-existing-function
+- Seen in commit: fix: update role and fix variable casing in message trace function
+
+---
+id: cipp-api-instinct-feature-multifile-workflow
+trigger: "When a feature or bugfix requires changes across multiple related files"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Feature Multifile Workflow
+
+## Action
+
+Edit/create related .ps1 files, update config if needed, and commit all changes together
+
+## Evidence
+
+- Workflow: feature-or-bugfix-touching-multiple-related-files
+- Pattern in files: Modules/CIPPCore/Public/Authentication/Add-CIPPSSOAppSecret.ps1, etc.
+
+---
+id: cipp-api-instinct-version-bump-workflow
+trigger: "When preparing a release, hotfix, or updating version/configuration metadata"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Version Bump Workflow
+
+## Action
+
+Update version numbers in version_latest.txt and/or host.json, update config files as needed, and commit all changes together
+
+## Evidence
+
+- Workflow: version-and-config-bump
+- Seen in commit: chore: bump version to 10.5.1
+
