@@ -1,0 +1,492 @@
+# Instincts generated from https://github.com/kphillipsjr1101/CIPP-API
+# Generated: 2026-06-10T23:28:43.163Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: CIPP-API-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Commit Length
+
+## Action
+
+Keep commit messages concise (~30 characters)
+
+## Evidence
+
+- Average commit message length: 30 chars
+- Based on 22 commits
+
+---
+id: CIPP-API-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: CIPP-API-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: CIPP-API-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: CIPP-API-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: CIPP-API-workflow-orca-test-fix-or-addition
+trigger: "when doing orca test fix or addition"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Orca Test Fix Or Addition
+
+## Action
+
+Follow the orca-test-fix-or-addition workflow:
+1. Identify ORCA test needing fix or addition
+2. Edit or create the corresponding test file in Modules/CIPPTests/Public/Tests/ORCA/Identity/
+3. Commit with message referencing ORCA test number
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: Modules/CIPPTests/Public/Tests/ORCA/Identity/Invoke-CippTestORCA*.ps1
+
+---
+id: CIPP-API-workflow-db-cache-type-and-handler-update
+trigger: "when doing db cache type and handler update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Db Cache Type And Handler Update
+
+## Action
+
+Follow the db-cache-type-and-handler-update workflow:
+1. Edit Config/CIPPDBCacheTypes.json to add or update cache type
+2. Edit or create handler script in Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1
+3. Optionally, update Modules/CIPPCore/Public/Invoke-CIPPDBCacheCollection.ps1
+4. Optionally, add or update related ORCA test
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: Config/CIPPDBCacheTypes.json, Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1, Modules/CIPPCore/Public/Invoke-CIPPDBCacheCollection.ps1
+
+---
+id: CIPP-API-workflow-standard-policy-and-test-update
+trigger: "when doing standard policy and test update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Standard Policy And Test Update
+
+## Action
+
+Follow the standard-policy-and-test-update workflow:
+1. Edit policy script in Modules/CIPPStandards/Public/Standards/
+2. Edit or update corresponding ORCA test in Modules/CIPPTests/Public/Tests/ORCA/Identity/
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1, Modules/CIPPTests/Public/Tests/ORCA/Identity/Invoke-CippTestORCA*.ps1
+
+---
+id: CIPP-API-workflow-version-bump-release
+trigger: "when doing version bump release"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/kphillipsjr1101/CIPP-API
+---
+
+# CIPP API Workflow Version Bump Release
+
+## Action
+
+Follow the version-bump-release workflow:
+1. Edit host.json and/or version_latest.txt to new version
+2. Commit with version bump message
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: host.json, version_latest.txt
+
+---
+id: cipp-api-instinct-file-naming
+trigger: "When creating a new file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct File Naming
+
+## Action
+
+Name the file using kebab-case
+
+## Evidence
+
+- Pattern in namingConventions.files: kebab-case
+
+---
+id: cipp-api-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: cipp-api-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: cipp-api-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: cipp-api-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: cipp-api-instinct-export-style
+trigger: "When exporting from a module"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: cipp-api-instinct-test-file-pattern
+trigger: "When creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test File Pattern
+
+## Action
+
+Name the file with the pattern *.test.ts
+
+## Evidence
+
+- Pattern in testing.filePattern: *.test.ts
+
+---
+id: cipp-api-instinct-test-type
+trigger: "When writing tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Test Type
+
+## Action
+
+Write unit tests
+
+## Evidence
+
+- Pattern in testing.testTypes: unit
+
+---
+id: cipp-api-instinct-git-commit-prefix-fix
+trigger: "When committing a bug fix"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Git Commit Prefix Fix
+
+## Action
+
+Prefix the commit message with 'fix:'
+
+## Evidence
+
+- Seen in commit: fix: rerun detection on scheduled tasks
+
+---
+id: cipp-api-instinct-git-commit-prefix-chore
+trigger: "When committing a maintenance or version bump change"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Git Commit Prefix Chore
+
+## Action
+
+Prefix the commit message with 'chore:'
+
+## Evidence
+
+- Seen in commit: chore: bump version to 10.5.2
+
+---
+id: cipp-api-instinct-git-commit-reference-orca
+trigger: "When committing a change to an ORCA test"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Git Commit Reference Orca
+
+## Action
+
+Reference the ORCA test number in the commit message
+
+## Evidence
+
+- Seen in commit: Fix ORCA104
+- Pattern in workflow: orca-test-fix-or-addition
+
+---
+id: cipp-api-instinct-orca-test-fix-or-addition
+trigger: "When a bug is found or new coverage is needed for an ORCA scenario"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Orca Test Fix Or Addition
+
+## Action
+
+Edit or create the corresponding test file in Modules/CIPPTests/Public/Tests/ORCA/Identity/ and commit with message referencing ORCA test number
+
+## Evidence
+
+- Workflow: orca-test-fix-or-addition
+- Files: Modules/CIPPTests/Public/Tests/ORCA/Identity/Invoke-CippTestORCA*.ps1
+
+---
+id: cipp-api-instinct-db-cache-type-and-handler-update
+trigger: "When adding or modifying a DB cache type and its handler"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Db Cache Type And Handler Update
+
+## Action
+
+Edit Config/CIPPDBCacheTypes.json, update or create handler script in Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1, optionally update Modules/CIPPCore/Public/Invoke-CIPPDBCacheCollection.ps1, and optionally update related ORCA test
+
+## Evidence
+
+- Workflow: db-cache-type-and-handler-update
+- Files: Config/CIPPDBCacheTypes.json, Modules/CIPPDB/Public/DBCache/Set-CIPPDBCache*.ps1
+
+---
+id: cipp-api-instinct-standard-policy-and-test-update
+trigger: "When updating a standard policy and its test"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Standard Policy And Test Update
+
+## Action
+
+Edit policy script in Modules/CIPPStandards/Public/Standards/ and update corresponding ORCA test in Modules/CIPPTests/Public/Tests/ORCA/Identity/
+
+## Evidence
+
+- Workflow: standard-policy-and-test-update
+- Files: Modules/CIPPStandards/Public/Standards/Invoke-CIPPStandard*.ps1
+
+---
+id: cipp-api-instinct-version-bump-release
+trigger: "When releasing a new version"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: kphillipsjr1101/CIPP-API
+---
+
+# Cipp Api Instinct Version Bump Release
+
+## Action
+
+Edit host.json and/or version_latest.txt to the new version and commit with a version bump message
+
+## Evidence
+
+- Workflow: version-bump-release
+- Files: host.json, version_latest.txt
+- Seen in commit: chore: bump version to 10.5.2
+
